@@ -1,0 +1,91 @@
+
+<html>
+  <head>
+      <title>Exact Age Calculator</title>
+    <link rel='stylesheet' href='style.css'/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src='script.js'></script>
+  </head>
+
+    <style>
+      #main_container {
+    width: 400px;
+    margin: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 30px;
+    font-family: sans-serif;
+    border-radius: 20px;
+    border: 3px solid #999;
+}
+
+#birth_date_input, #age_container {
+    text-align: center;
+    margin: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#age_container {
+    margin: 40px 5px;
+    padding: 20px;
+    border-radius: 50px;
+    border: 1px solid #000;
+    font-weight: bolder;
+    background: #EEE;
+    font-size: 20px;
+    line-height: 40px;
+}
+
+#calculate {
+    cursor: pointer;
+    text-align: center;
+    width: 200px;
+    padding: 5px;
+    margin: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid #999;
+    border-radius: 10px;
+    background: #FFD119;
+    background: -webkit-gradient(linear, left top, left bottom, from(#FFD119), to(#E6B800));
+	background: -moz-linear-gradient(top, #FFD119, #E6B800);
+    font-weight: bold;
+    height: 28px;
+    box-shadow: 0 -8px inset;
+}
+
+#calculate:hover {
+    background: -webkit-gradient(linear, left top, left bottom, from(#E6B800), to(#FFD119));
+	background: -moz-linear-gradient(top, #E6B800, #FFD119);
+    margin-top: 13px;
+    height: 25px;
+    box-shadow: 0 -5px inset;
+}
+
+#calculate:active {
+    background: #403300;
+    padding-top: 10px;
+    height: 20px;
+    box-shadow: 0 5px #000 inset;
+}
+
+#age {
+    padding: 5px;
+    border: 3px dashed #AAA;
+}
+    </style>
+  <body>
+      <div id="main_container">
+          <div id="birth_date_input">Birth Date: <input type="date" id="birth_date"></div>
+          <br/>
+          <div id="calculate">Calculate your age</div>
+          
+          <div id="age_container"><span id="exact_age">Age</span></div>
+          <p><em>* Year here means 365 days and Month  here means 30 days, thus your birthday may not means you will be 0 days old</em></p>
+          <hr>
+      </div>
+
+      <script src="script.js"></script>
+  </body>
+  </html>
