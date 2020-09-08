@@ -1,45 +1,31 @@
-// var DOB = "20 october, 1997";
-// var millisecondsBetweenDOBAnd1970 = Date.parse(DOB);
-// var millisecondsBetweenNowAnd1970 = Date.now();
-// var ageInMilliseconds = millisecondsBetweenNowAnd1970-millisecondsBetweenDOBAnd1970;
+function ageCalculate(){
+  //document.getElementById('age').InnerHtml
+// document.getElementById("demo").InnerHtml=4+5;
+ //document.write="Hi";
+ var birthDate =document.getElementById('birth_date').value;
+ var userName = document.getElementById('userName').value;
 
+//if(birthDate==""){
+//  alert("Choose correct birthdate.")
+//}else{
+//  alert(birthDate);
+//  alert(Date());
+  var d = new Date(birthDate);
 
-//   var milliseconds = ageInMilliseconds;
-//   var second = 1000;
-//   var minute = second*60;
-//   var hour = minute*60;
-//   var day = hour*24;
-//   var month = day*30; 
+ // document.getElementById("age").innerHTML = d;
 
-//   var year = day*365;
+//}
 
-
-// var years = Math.round(milliseconds/year);
-// var days = years*365;
-
-
-  
-// function printResults(){
-//   var message = "Age in Years : "+years+
-//        "</br>Age in Days : "+days;
-
-//   document.getElementById('placeholder').innerHTML = message;
-// }
-
-// window.onload = printResults;
-
-
-$(document).ready(function(){
-  $("#calculate").click(function(){
-      var mdate = $("#birth_date").val().toString();
+      var mdate = birthDate.toString();
       var yearThen = parseInt(mdate.substring(0,4), 10);
       var monthThen = parseInt(mdate.substring(5,7), 10);
       var dayThen = parseInt(mdate.substring(8,10), 10);
       
       var today = new Date();
       var birthday = new Date(yearThen, monthThen-1, dayThen);
-      
+   //   alert(today.valueOf() + " " + birthday.valueOf());
       var differenceInMilisecond = today.valueOf() - birthday.valueOf();
+    //  alert(differenceInMilisecond);
       
       var year_age = Math.floor(differenceInMilisecond / 31536000000);
       var day_age = Math.floor((differenceInMilisecond % 31536000000) / 86400000);
@@ -52,11 +38,23 @@ $(document).ready(function(){
       
       day_age = day_age % 30;
       
+      var tMnt= (month_age + (year_age*12));
+      var tDays =(tMnt*30) + day_age;
+      
       if (isNaN(year_age) || isNaN(month_age) || isNaN(day_age)) {
-          $("#exact_age").text("Invalid birthday - Please try again!");
+          document.getElementById("age").innerHTML = ("Invalid birthday - Please try again!");
       }
       else {
-          $("#exact_age").html("You are<br/><span id=\"age\">" + year_age + " years " + month_age + " months " + day_age + " days</span> old");
+          document.getElementById("age").innerHTML =  "Hi "
+  
+          // +  tDays + " days" 
+
+          + userName+  " did you know that you where born on a Monday " + day_age + "days ago"  
+
       }
-  });
-});
+
+}
+
+
+
+
