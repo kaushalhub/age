@@ -45,16 +45,11 @@ function ageCalculate(){
           document.getElementById("age").innerHTML = ("Invalid birthday - Please try again!");
       }
       else {
-          document.getElementById("age").innerHTML =  "Hi "
-  
-          // +  tDays + " days" 
+          document.getElementById("age").innerHTML = "Hi "
+        
 
-          + userName+  " did you know that you where born on a Monday " + day_age + "days ago"  
+            + userName+  " did you know that you where born on a Monday " + tDays + "days ago" 
 
       }
 
 }
-
-
-
-
